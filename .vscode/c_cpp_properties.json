@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "WSL",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/lib/gcc/arm-none-eabi/8.1.0/include",
+                "/usr/lib/gcc/arm-none-eabi/8.1.0/include-fixed",
+                "/usr/lib/gcc/arm-none-eabi/8.1.0/../../../../arm-none-eabi/include"
+            ],
+            "defines": [
+                "USE_STDPERIPH_DRIVER",
+                "GD32F3X0",
+                "GD32F350"
+            ],
+            "compilerPath": "arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
