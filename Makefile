@@ -36,34 +36,10 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-Src/main.c \
-Src/systick.c \
-Src/gd32f3x0_it.c \
+$(wildcard Src/*.c) \
 Firmware/CMSIS/GD/GD32F3x0/Source/system_gd32f3x0.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_adc.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_cec.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_cmp.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_crc.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_ctc.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_dac.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_dbg.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_dma.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_exti.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_fmc.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_fwdgt.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_gpio.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_i2c.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_misc.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_pmu.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_rcu.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_rtc.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_spi.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_syscfg.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_timer.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_tsi.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_usart.c \
-Firmware/GD32F3x0_standard_peripheral/Source/gd32f3x0_wwdgt.c \
-Utilities/gd32f3x0_eval.c
+$(wildcard Firmware/GD32F3x0_standard_peripheral/Source/*.c) \
+$(wildcard Utilities/*.c)
 
 # ASM sources
 ASM_SOURCES =  \
