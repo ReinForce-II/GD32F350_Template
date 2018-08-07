@@ -1,22 +1,19 @@
 {
     "configurations": [
         {
-            "name": "WSL",
+            "name": "win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/usr/lib/gcc/arm-none-eabi/8.1.0/include",
-                "/usr/lib/gcc/arm-none-eabi/8.1.0/include-fixed",
-                "/usr/lib/gcc/arm-none-eabi/8.1.0/../../../../arm-none-eabi/include"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "USE_STDPERIPH_DRIVER",
                 "GD32F3X0",
                 "GD32F350"
             ],
-            "compilerPath": "arm-none-eabi-gcc",
+            "compilerPath": "E:/gcc-arm-none-eabi-7-2018-q2-update-win32/bin/arm-none-eabi-gcc.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "msvc-x64"
         }
     ],
     "version": 4

@@ -39,7 +39,10 @@ C_SOURCES =  \
 $(wildcard Src/*.c) \
 Firmware/CMSIS/GD/GD32F3x0/Source/system_gd32f3x0.c \
 $(wildcard Firmware/GD32F3x0_standard_peripheral/Source/*.c) \
-$(wildcard Utilities/*.c)
+$(wildcard Utilities/*.c)	\
+$(wildcard Utilities/Third_Party/freertos/*.c)	\
+$(wildcard Utilities/Third_Party/freertos/portable/GCC/ARM_CM3/*.c)	\
+Utilities/Third_Party/freertos/portable/MemMang/heap_4.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -55,7 +58,7 @@ PERIFLIB_SOURCES =
 #######################################
 # binaries
 #######################################
-BINPATH = /usr/sbin
+BINPATH = E:/gcc-arm-none-eabi-7-2018-q2-update-win32/bin
 PREFIX = arm-none-eabi-
 CC = $(BINPATH)/$(PREFIX)gcc
 AS = $(BINPATH)/$(PREFIX)gcc -x assembler-with-cpp
@@ -102,7 +105,9 @@ C_INCLUDES =  \
 -IFirmware/CMSIS \
 -IFirmware/CMSIS/GD/GD32F3x0/Source/ARM \
 -IFirmware/GD32F3x0_standard_peripheral/Include \
--IUtilities
+-IUtilities	\
+-IUtilities/Third_Party/freertos/include	\
+-IUtilities/Third_Party/freertos/portable/GCC/ARM_CM3
 
 
 # compile gcc flags
