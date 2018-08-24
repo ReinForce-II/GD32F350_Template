@@ -8,7 +8,8 @@
             "defines": [
                 "USE_STDPERIPH_DRIVER",
                 "GD32F3X0",
-                "GD32F350"
+                "GD32F350",
+                "ARM_MATH_CM4"
             ],
             "compilerPath": "E:/gcc-arm-none-eabi-7-2018-q2-update-win32/bin/arm-none-eabi-gcc.exe",
             "cStandard": "c11",
