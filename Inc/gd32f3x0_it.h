@@ -35,5 +35,3 @@ void PendSV_Handler(void);
 void SysTick_Handler(void);
 
 #endif /* GD32F3X0_IT_H */
-
-
