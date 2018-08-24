@@ -38,6 +38,7 @@ BUILD_DIR = build
 C_SOURCES =  \
 $(wildcard Src/*.c) \
 Firmware/CMSIS/GD/GD32F3x0/Source/system_gd32f3x0.c \
+$(wildcard Firmware/CMSIS/DSP/Source/*/*.c) \
 $(wildcard Firmware/GD32F3x0_standard_peripheral/Source/*.c) \
 $(wildcard Utilities/*.c)
 
@@ -89,7 +90,8 @@ AS_DEFS =
 C_DEFS =  \
 -DUSE_STDPERIPH_DRIVER \
 -DGD32F3X0 \
--DGD32F350
+-DGD32F350 \
+-DARM_MATH_CM4
 
 
 # AS includes
@@ -101,6 +103,7 @@ C_INCLUDES =  \
 -IFirmware/CMSIS/GD/GD32F3x0/Include \
 -IFirmware/CMSIS \
 -IFirmware/CMSIS/GD/GD32F3x0/Source/ARM \
+-IFirmware/CMSIS/DSP/Include \
 -IFirmware/GD32F3x0_standard_peripheral/Include \
 -IUtilities
 
@@ -126,8 +129,8 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)"
 LDSCRIPT = GD32F350CBTx_FLASH.ld
 
 # libraries
-LIBS = -lc -lm -lnosys 
-LIBDIR = 
+LIBS = -lc -lm -lnosys -larm_cortexM4l_math
+LIBDIR = -LLib/GCC
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
 # default action: build all
