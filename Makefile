@@ -40,7 +40,10 @@ $(wildcard Src/*.c) \
 Firmware/CMSIS/GD/GD32F3x0/Source/system_gd32f3x0.c \
 $(wildcard Firmware/CMSIS/DSP/Source/*/*.c) \
 $(wildcard Firmware/GD32F3x0_standard_peripheral/Source/*.c) \
-$(wildcard Utilities/*.c)
+$(wildcard Utilities/*.c)	\
+$(wildcard Utilities/Third_Party/freertos/*.c)	\
+$(wildcard Utilities/Third_Party/freertos/portable/GCC/ARM_CM3/*.c)	\
+Utilities/Third_Party/freertos/portable/MemMang/heap_3.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -105,7 +108,9 @@ C_INCLUDES =  \
 -IFirmware/CMSIS/GD/GD32F3x0/Source/ARM \
 -IFirmware/CMSIS/DSP/Include \
 -IFirmware/GD32F3x0_standard_peripheral/Include \
--IUtilities
+-IUtilities	\
+-IUtilities/Third_Party/freertos/include	\
+-IUtilities/Third_Party/freertos/portable/GCC/ARM_CM3
 
 
 # compile gcc flags
